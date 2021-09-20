@@ -1,0 +1,44 @@
+{
+    "goals": [
+      {
+        "id": "0",
+        "type": "Bulk",
+        "foods": [
+            "Peanut Butter",
+            "Chicken",
+            "Broccoli"
+        ],
+        "workouts": [
+          "weights",
+          "bodyweight",
+          "cardio"
+        ]
+      },
+      {
+        "id": "1",
+        "type": "Cut",
+        "foods": [
+            "vegetables",
+            "fruits",
+            "tofu"
+        ],
+        "workouts": [
+          "cardio",
+          "bodyweight"
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Increase cardio",
+        "foods": [
+            "bread",
+            "vegetables",
+            "soap"
+        ],
+        "workouts": [
+          "cardio",
+          "weights"
+        ]
+      }
+    ]
+  }
