@@ -1,3 +1,3 @@
 const {exercises} = require ('../models')
 
-const exercisesData = require ('../models');
+const exercisesData = []
