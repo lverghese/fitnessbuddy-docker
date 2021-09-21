@@ -1,4 +1,7 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
+class Goals extends Model {}
 
 
 Goals.init(
@@ -16,7 +19,6 @@ Goals.init(
           key: 'id'
         }
       },
-      //
       goal: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -25,4 +27,6 @@ Goals.init(
           }
       }
     }
-)
+);
+
+module.exports = Goals;

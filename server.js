@@ -13,11 +13,6 @@ app.get('/', (req, res) => {
   res.send('FITNESS BUDDY');
 });
 
-app.get('api/goals', (req, res) => {
-    //from signup ->
-    res.send('What are ur goals?');
-});
-
 app.listen(PORT, () => {
   console.log(`LISTENING AT http://localhost:${PORT}`);
 });
