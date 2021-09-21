@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
             //include that user's goal
           {
             model: Goals,
-            attributes: ['id', 'user_id', 'goals']
+            attributes: ['id', 'user_id', 'goal']
           }
           //other models to include here:
         ]
