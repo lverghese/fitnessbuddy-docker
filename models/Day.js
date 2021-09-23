@@ -2,19 +2,16 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Plan extends Model {}
+class Day extends Model {}
 
-Plan.init(
+Day.init(
   {
+    // define columns
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-    },
-    plan_name: {
-        type: DataTypes.STRING,
-        allowNull: false
     }
   },
   {
@@ -22,8 +19,8 @@ Plan.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'plan',
+    modelName: 'day',
   }
 );
 
-module.exports = Plan;
+module.exports = Day;
