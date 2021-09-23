@@ -1,3 +1,18 @@
-const {workout_plan} = require('../models')
+const { Plan } = require('../models')
 
-const workout_planData = []
+const planData = [
+    {
+        plan_name: 'Bulk'
+    },
+    {
+        plan_name: 'Tone'
+    },
+    {
+        plan_name: 'Cut'
+    }
+
+]
+
+const seedPlan = () => Plan.bulkCreate(planData);
+
+module.exports = seedPlan;

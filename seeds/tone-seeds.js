@@ -1,6 +1,6 @@
-const { Bulk } = require('../models');
+const { Tone } = require('../models');
 
-const bulkData = [
+const toneData = [
     {
         exercise_name: 'Barbell Squats',
         setLength: 4,
@@ -145,6 +145,6 @@ const bulkData = [
 
 ]
 
-const seedBulk = () => Bulk.bulkCreate(bulkData);
+const seedTone = () => Tone.bulkCreate(toneData);
 
-module.exports = seedBulk;
+module.exports = seedTone;
