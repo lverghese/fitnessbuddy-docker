@@ -24,6 +24,7 @@ const sess = {
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//express.static = middleware takes folder contents and serves them as static 
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

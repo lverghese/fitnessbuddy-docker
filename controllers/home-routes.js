@@ -1,59 +1,21 @@
-//'HOME' = LOGIN/SINGUP PAGE
-
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User } = require('../models');
 
-// get all posts for homepage
+//display possible workouts on homepage
 router.get('/', (req, res) => {
-    console.log('======================');
-    User.findAll({
-    })
-    //TESTING: DISPLAYING SEEDED USER DATA
-      .then(dbUserData => {
-        const users = dbUserData.map(user => user.get({ plain: true }));
-  
-        res.render('login', { user, loggedIn: req.session.loggedIn});
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-  
-  // TESTING: get single user by id
-  router.get('/user/:id', (req, res) => {
-    User.findOne({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(dbUserData => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-  
-        const user = dbUserData.get({ plain: true });
-        //USING LOGIN PAGE TO RENDER UNTIL THERE ARE MORE TEMPLATES
-        res.render('login', {
-          user,
-          loggedIn: req.session.loggedIn
-        });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-  
-  router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
+  res.render('homepage',  {
+    id: 1,
+    post_url: 'https://handlebarsjs.com/guide/',
+    title: 'Handlebars Docs',
+    created_at: new Date(),
+    vote_count: 10,
+    comments: [{}, {}],
+    user: {
+      username: 'test_user'
     }
-  
-    res.render('login');
   });
+});
+
+module.exports = router;
   
-  module.exports = router;

@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-/*
+
 //GET usersby id
 router.get('/:id', (req, res) => {
     User.findOne({
@@ -110,7 +110,7 @@ router.post('/logout', (req, res) => {
     }
   });
 
-//edit user by id
+//edit user by id /api/users/1
 router.put('/:id', (req, res) => {
       // pass in req.body instead to only update what's passed through
   User.update(req.body, {
@@ -132,7 +132,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-//DELETE user by id
+//DELETE user by id /api/users/1
 router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
@@ -151,5 +151,5 @@ router.delete('/:id', (req, res) => {
           res.status(500).json(err);
         });
 });
-*/
+
 module.exports = router;
