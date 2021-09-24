@@ -1,14 +1,15 @@
 const path = require('path');
+require('dotenv').config();
 const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
 const routes = require('./controllers/');
- 
-const app = express();
-const PORT = process.env.PORT || 3001;
-
 const sequelize = require('./config/connection');
+const exphbs = require('express-handlebars')
+// Express session for session cookies
+const session = require('express-session')
+// Sequelize store session
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const hbs = exphbs.create({});
 
 const sess = {
   secret: 'Super secret secret',
@@ -20,19 +21,21 @@ const sess = {
   })
 };
 
-app.use(session(sess));
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-const helpers = require('./utils/helpers');
-
-const hbs = exphbs.create({ helpers });
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('./controllers/'));
+
+
+app.use(session(sess));
+app.use(routes);
+
 
 //sync method to establish db connection...if it does not find a table it will create one for you
 //force: true same as drop table if exists..can b annoying
