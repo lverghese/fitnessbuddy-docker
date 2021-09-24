@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+///SCRATCH MOST OF BELOW - SEE HOME-ROUTES FOR USE RTESTING
 //GET users
 router.get('/', (req, res) => {
     //access user model and findAll
@@ -13,7 +15,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+/*
 //GET usersby id
 router.get('/:id', (req, res) => {
     User.findOne({
@@ -149,5 +151,5 @@ router.delete('/:id', (req, res) => {
           res.status(500).json(err);
         });
 });
-
+*/
 module.exports = router;
