@@ -8,29 +8,12 @@ const withAuth = require('../utils/auth');
 
 
 // get all workouts for user's dashboard
-router.get('/dashboard', withAuth, (req, res) => {  
-  console.log(req.session);
-
-  //!!!=============================================!!!
-  //HARD-CODED TO BULK FOR TESTING
-  //!!==============================================!!!
-
+router.get('/', withAuth, (req, res) => {  
     console.log('======================');
-    Bulk.findAll({
+    Plan.findAll({
       attributes: [
-        'id',
-        'exercise_name',
-        'setLength',
-        'repLength',
-        'plan_id',
-        'day_id'
-        //seqelize would be here literal to select anything specific needed
+       //get plan_id from user obj
       ]
-      /*
-      include: [
-            //other models to include
-      ]
-      */
     })
       .then(dbBulkData => {
         const posts = dbBulkData.map(goal => goal.get({ plain: true }));
