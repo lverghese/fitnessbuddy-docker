@@ -10,5 +10,19 @@ router.get('/', (req, res) => {
   )
 });
 
+//verify cookies
+router.get('/', (req, res) => {
+  console.log(req.session);
+
+});
+
+//return to homepage 
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('login');
+});
+
 module.exports = router;
-  
