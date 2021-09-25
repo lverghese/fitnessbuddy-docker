@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-
-///SCRATCH MOST OF BELOW - SEE HOME-ROUTES FOR USE RTESTING
 //GET users
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
@@ -42,15 +40,15 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   /* expects 
 {
-  "username": "Carol", 
-  "email": "carol@gmail.com",
-  "password": "password1234"
-}
+      "username": "Carol", 
+      "email": "carol@gmail.com",
+      "password": "password1234"
+    }
 */
-  User.create({
+  Bulk.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password  
   })
     .then(dbUserData => {
       req.session.save(() => {
