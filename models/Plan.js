@@ -15,6 +15,14 @@ Plan.init(
     plan_name: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    workout_plan_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    workout_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   },
   {
