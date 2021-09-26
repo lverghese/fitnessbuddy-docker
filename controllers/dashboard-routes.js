@@ -1,25 +1,22 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Excercises, ser } = require('../models');
+const { Bulk } = require('../models');
+const withAuth = require('../utils/auth');
+
+//how to determine which model to search from?
+//ask about a variable based route that gets from model designated by varuable
+
 
 // get all workouts for user's dashboard
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {  
     console.log('======================');
-    Excercises.findAll({
+    Plan.findAll({
       attributes: [
-        'id',
-        'user_id',
-        'goal'
-        //seqelize would be here literal to select anything needed
+       //get plan_id from user obj
       ]
-      /*
-      include: [
-            //other models to include
-      ]
-      */
     })
-      .then(dbGoalData => {
-        const posts = dbGoalData.map(goal => goal.get({ plain: true }));
+      .then(dbBulkData => {
+        const posts = dbBulkData.map(goal => goal.get({ plain: true }));
         //on login start session render user's dashboard once we get user's data (goals > plan )
         res.render('dashboard', {
           posts,
@@ -32,7 +29,4 @@ router.get('/', (req, res) => {
       });
   });
 
-  //need routes to get the weekly calendar/list of workouts to do that week
-  router.get('/workouts', (req, res) => {
-
-  });
+module.exports = router;

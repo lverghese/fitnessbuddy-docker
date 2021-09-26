@@ -1,11 +1,12 @@
 const router = require('express').Router();
+const apiRoutes = require('./api');
+const homeRoutes = require('./home-routes.js');
 
-const apiRoutes = require('./api/');
-const dashboardRoutes = require('./dashboard-routes.js');
 
-router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-//router.use('/dashboard', dashboardRoutes);
+
+//use localhost:3001 as home route
+router.use('/', homeRoutes);
 
 router.use((req, res) => {
     res.status(404).end();

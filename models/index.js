@@ -1,9 +1,6 @@
 //importing Models
 const Plan = require('./Plan');
-const Day = require('./Day');
-const Bulk = require('./Bulk');
-const Cut = require('./Cut');
-const Tone = require('./Tone');
+const User = require('./User');
 
 
 Bulk.belongsTo(Plan, {
@@ -18,16 +15,7 @@ Tone.belongsTo(Plan, {
     foreignKey: 'plan_id'
 })
 
-Bulk.belongsTo(Day, {
-    foreignKey: 'day_id'
-})
-
-Cut.belongsTo(Day, {
-    foreignKey: 'day_id'
-})
-
-Tone.belongsTo(Day, {
-    foreignKey: 'day_id'
-})
 
 
+module.exports = { User };
+//model associatios here
