@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -17,7 +16,16 @@
     />
     <title>Fitness Friends</title>
   </head>
+  <style media="screen">
+  .carousel-cell {
+    width: 100%;
+    }
 
+    /* cell number */
+    .carousel-cell:before {
+      display: block;
+    }
+  </style>
   <body>
 
     <header class="jumbotron bg-dark text-white bg-gradient">
@@ -25,31 +33,67 @@
       <p class="lead">Swole is the goal, size is the prize!</p>
     </header>
 
-    <div class="container bg-secondary">
-      <!-- Workouts/Meal schedule-->
 
-      <div class="row">
-        <div class="col-md-2 text-white">Monday</div>
-        <div class="col-10 bg-secondary d-flex align-items-center justify-content-start" style="padding:0">
-          <textarea id="" style="width:100%; height:100%"></textarea>
+    <h1 class="w3-center">Stan this Workout Plan</h1>
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
+      <div class="carousel-cell">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Day 1</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Workout and Meal</h6>
+            <p class="card-text">Lift all the weights in the gym</p>
+            <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="carousel-cell">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Day 2</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Workout and Meal</h6>
+              <p class="card-text">Everybody wants to be a bodybuilder, but don't nobody want to lift no heavy ass weights</p>
+              <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-2 text-white">Tuesday</div>
-            <div class="col-10 bg-secondary d-flex align-items-center justify-content-start" style="padding:0">
-              <textarea id="" style="width:100%; height:100%"></textarea>
+      <div class="carousel-cell">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Day 3</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Workout and Meal</h6>
+            <p class="card-text">Tren hard</p>
+            <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+          </div>
+        </div>
+      </div>
+
+        <div class="carousel-cell">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Day 4</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Workout and Meal</h6>
+              <p class="card-text">Lift all the weights in the gym</p>
+              <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+            </div>
+          </div>
+          </div>
+
+          <div class="carousel-cell">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Day 5</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Workout and Meal</h6>
+                <p class="card-text">Lift all the weights in the gym</p>
+                <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+              </div>
+            </div>
             </div>
 
-        <div class="row">
-                <div class="col-md-2 text-white">Wednesday</div>
-                <div class="col-10 bg-secondary d-flex align-items-center justify-content-start" style="padding:0">
-                 <textarea id="" style="width:100%; height:100%"></textarea>
-                </div>
 
-
-
-        </div>
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>
