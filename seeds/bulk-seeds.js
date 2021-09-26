@@ -5,141 +5,141 @@ const bulkData = [
         exercise_name: 'Barbell Squats',
         setLength: 4,
         repLength: 8,
-        plan_id: 1,
+        workout_plan_id: 1,
         day_id: 1
     },
     {
         exercise_name: 'Leg Extensions',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 15,
+        workout_plan_id: 1,
         day_id: 1
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Stiff Legged Deadlifts',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 10,
+        workout_plan_id: 1,
         day_id: 1
     },
     {
-        exercise_name: 'Barbell Squats',
-        setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        exercise_name: 'Leg Press',
+        setLength: 5,
+        repLength: 12,
+        workout_plan_id: 1,
         day_id: 1
     },
     {
         exercise_name: 'Bench Press',
         setLength: 4,
         repLength: 8,
-        plan_id: 1,
+        workout_plan_id: 1,
         day_id: 2
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Incline Dumbbell Flys',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 15,
+        workout_plan_id: 1,
         day_id: 2
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Machine Chest Press',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 12,
+        workout_plan_id: 1,
         day_id: 2
     },
     {
-        exercise_name: 'Barbell Squats',
-        setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        exercise_name: 'Neutral Cable Flys',
+        setLength: 5,
+        repLength: 15,
+        workout_plan_id: 1,
         day_id: 2
     },
     {
         exercise_name: 'Deadlifts',
-        setLength: 4,
+        setLength: 3,
         repLength: 8,
-        plan_id: 1,
+        workout_plan_id: 1,
         day_id: 3
     },
     {
-        exercise_name: 'Barbell Squats',
-        setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        exercise_name: 'Close-grip Cable Rows',
+        setLength: 5,
+        repLength: 15,
+        workout_plan_id: 1,
         day_id: 3
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Lat Pulldowns',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 10,
+        workout_plan_id: 1,
         day_id: 3
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Bend-Over Barbell Rows',
         setLength: 4,
         repLength: 8,
-        plan_id: 1,
+        workout_plan_id: 1,
         day_id: 3
     },
     {
         exercise_name: 'Overhead Military Press',
         setLength: 4,
         repLength: 8,
-        plan_id: 1,
+        workout_plan_id: 1,
         day_id: 4
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Lateral Flys',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 10,
+        workout_plan_id: 1,
         day_id: 4
     },
 
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Front Dumbbell Raises',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 12,
+        workout_plan_id: 1,
         day_id: 4
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Rear-Delt Dumbbell Flys',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 10,
+        workout_plan_id: 1,
         day_id: 4
     },
     {
         exercise_name: 'Alternating Dumbbell Curls',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 15,
+        workout_plan_id: 1,
         day_id: 5
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Rope Tricep Pushdowns',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 15,
+        workout_plan_id: 1,
         day_id: 5
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Cable Rope Hammer Curls',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 12,
+        workout_plan_id: 1,
         day_id: 5
     },
     {
-        exercise_name: 'Barbell Squats',
+        exercise_name: 'Barbell Skullcrushers',
         setLength: 4,
-        repLength: 8,
-        plan_id: 1,
+        repLength: 10,
+        workout_plan_id: 1,
         day_id: 5
     }
 
