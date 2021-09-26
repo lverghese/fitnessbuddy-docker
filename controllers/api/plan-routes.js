@@ -1,10 +1,15 @@
 const router = require('express').Router();
-const { Bulk } = require('../../models');
+const { Plan } = require('../../models');
 
+//=======================================
+//WAITING ON PLAN MODEL TO TEST
+//======================================
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method)
-    Bulk.findAll()
-      .then(dbUserData => res.json(dbUserData))
+    Plan.findAll({
+
+    })
+      .then(dbPlanData => res.json(dbPlanData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -13,45 +18,37 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     // Access our User model and run .findAll() method)
-    Bulk.findOne({
+    Plan.findOne({
         where: {
             id: req.params.id
           }
     })
-      .then(dbUserData => res.json(dbUserData))
+      .then(dbPlanData => res.json(dbPlanData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
   });
 
-  //new bulk obj posted when ...?
+//new plan at api/plan/
+//...next route something like api/plan/workout_choice? or whatever it's called
 router.post('/', (req, res) => {
     /* expects 
     {
-  "exercise_name": " ", 
-  "setLength": " ",
-  "repLength": " ",
-  "plan_id": " ",
-  "day_id": " "
+  "workout": "Bulk"
 }
   */
-    Bulk.create({
-      exercise_name: req.body.exercise_name,
-      setLength: req.body.setLength,
-      repLength: req.body.repLength,
-      //not sure since these are referenced
-      plan_id:  req.body.plan_id,
-      day_id: req.body.day_id
+    Plan.create({
+      //add plan to user obj in current session
     })
-      .then(dbUserData => {
+      .then(dbPlanData => {
       //session save login since logged in???
-      res.json(dbUserData);
+      res.json(dbPlanData);
       })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
 
 module.exports = router;

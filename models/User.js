@@ -48,6 +48,13 @@ User.init(
         // this means the password must be at least four characters long
         len: [4]
       }
+    },
+    workoutPlan_ID: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references:{
+        workoutPlan_ID
+      }
     }
   },
   {
