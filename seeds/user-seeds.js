@@ -9,8 +9,8 @@ const userData = [
   },
   {
     username: "Dave",
-    email: "dave@gmail.com",
-    //password: "password1234",
+    //email: "dave@gmail.com",
+    password: "password1234",
     workout_plan_id: "2"
   }
 ];
