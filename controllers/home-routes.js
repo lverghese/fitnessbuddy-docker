@@ -8,19 +8,31 @@ router.get('/', (req, res) => {
       'plan_name'
     ]
   })
-    .then(dbPlanData => {
-      const plan = dbPlanData.map(post => post.get({ plain: true }));
+    .then(dbPlanData => res.json(dbPlanData))
+      //const plan = dbPlanData.map(post => post.get({ plain: true }));
 
-      res.render('homepage', {
-        plan,
-        loggedIn: req.session.loggedIn
-      });
-    })
+      // res.render('homepage', {
+      //   plan,
+      //   loggedIn: req.session.loggedIn
+      // });
+   // })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
 });
 
+// redirect to homepage is user is signed in
+router.get('/signup', (req, res, err) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  if(err){
+    console.log(err);
+  } else {
+    res.render('signup');
+  }  
+});
 
 module.exports = router;
