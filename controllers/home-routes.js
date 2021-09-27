@@ -4,10 +4,33 @@ const { User } = require('../models');
 
 //display possible workouts on homepage
 router.get('/', (req, res) => {
-  res.render('homepage'
-  //,
-  //list workouts or images or somehting random for homepage - no functionality aside from login buttons)
-  )
+  Plan.findAll({
+    attributes: [
+      'plan_name',
+      'user_id'
+    ],
+    include: [
+      {
+        model: ,
+        attributes: [ ],
+        include: {
+          model: User,
+          attributes: [' ']
+        }
+      },
+      {
+        model: User,
+        attributes: ['']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+
+      res.render('homepage', {
+        posts,
+        loggedIn: req.session.loggedIn
+      });
 });
 
 //verify cookies

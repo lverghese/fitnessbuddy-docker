@@ -62,7 +62,7 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-/*
+
 //login route
 router.post('/login', (req, res) => {
   User.findOne({
@@ -117,7 +117,7 @@ router.put('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-*/
+
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
