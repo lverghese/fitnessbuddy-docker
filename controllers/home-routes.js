@@ -1,28 +1,49 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Plan } = require('../models');
 
-//display possible workouts on homepage
 router.get('/', (req, res) => {
-  res.render('homepage'
-  //,
-  //list workouts or images or somehting random for homepage - no functionality aside from login buttons)
-  )
+  Plan.findAll({
+    attributes: [
+      'plan_name'
+    ]
+  })
+    .then(dbPlanData => res.json(dbPlanData))
+      //const plan = dbPlanData.map(post => post.get({ plain: true }));
+
+      // res.render('homepage', {
+      //   plan,
+      //   loggedIn: req.session.loggedIn
+      // });
+   // })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
-//verify cookies
-router.get('/', (req, res) => {
-  console.log(req.session);
-
+router.get('/login', (req, res, err) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  } if(err){
+    console.log(err);
+  } else {
+  res.render('login');
+  }
 });
 
-//return to homepage 
-router.get('/login', (req, res) => {
+// redirect to homepage is user is signed in
+router.get('/signup', (req, res, err) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-  res.render('login');
+  if(err){
+    console.log(err);
+  } else {
+    res.render('signup');
+  }  
 });
 
 module.exports = router;

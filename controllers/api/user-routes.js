@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+/*come back to post route... */
 //GET users
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
@@ -35,19 +36,16 @@ router.get('/:id', (req, res) => {
     });
 });
 
-//POST users
 // POST /api/users
 router.post('/', (req, res) => {
   /* expects 
 {
       "username": "Carol", 
-      "email": "carol@gmail.com",
       "password": "password1234"
     }
 */
-  Bulk.create({
+  User.create({
     username: req.body.username,
-    email: req.body.email,
     password: req.body.password  
   })
     .then(dbUserData => {
@@ -69,11 +67,11 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
-      email: req.body.email
+      username: req.body.username
     }
   }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
+      res.status(400).json({ message: 'No user with that username!' });
       return;
     }
 
@@ -92,6 +90,11 @@ router.post('/login', (req, res) => {
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
+  })
+  //DEBUG UNHANDLED PROMISE
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 
@@ -123,7 +126,7 @@ router.delete('/:id', (req, res) => {
   })
     .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: 'his user ID does not exist!' });
+        res.status(404).json({ message: 'This user ID does not exist!' });
         return;
       }
       res.json(dbUserData);
@@ -135,15 +138,18 @@ router.delete('/:id', (req, res) => {
 });
 
 //logout, destroy session
-router.post('/logout', (req, res) => {
+router.post('/logout', (req, res, err) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
+  } if(err){
+    console.log(err);
   }
   else {
     res.status(404).end();
   }
+
 });
 
 

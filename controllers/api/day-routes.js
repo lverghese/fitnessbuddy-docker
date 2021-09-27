@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Plan } = require('../../models');
+const { Day } = require('../../models');
 
 router.get('/', (req, res) => {
-    Plan.findAll({})
-      .then(dbPlanData => res.json(dbPlanData))
+    Day.findAll({})
+      .then(dbDayData => res.json(dbDayData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -11,12 +11,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Plan.findOne({
+    Day.findOne({
         where: {
             id: req.params.id
           }
     })
-      .then(dbPlanData => res.json(dbPlanData))
+      .then(dbDayData => res.json(dbDayData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -25,20 +25,21 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     /* expects 
-    {
-  "plan_name": "Bulk",
-  "user_id": 1
+{
+"exercise_name": "",
+"setLength": ,
+"repLength": ,
+"workout_plan_id": ,
+"day_id": 
 }
   */
-    Plan.create({
-      plan_name: req.body.plan_name,
-      user_id: req.body.user_id
+    Day.create({
+      day_name: req.body.day_name
     })
-      .then(dbPlanData => {
-      //session save login since logged in???
-      res.json(dbPlanData);
+      .then(dbDayData => {
+      res.json(ddDayData);
       })
-      .catch(err => {
+        .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
