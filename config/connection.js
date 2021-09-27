@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 
 //connect to db
-const sequelize = new Sequelize('fitness_buddy_db', 'root', 'Cena2022!', {
+const sequelize = new Sequelize('', '', '', {
   host: 'localhost',
   dialect: 'mysql',
   port: 3306
