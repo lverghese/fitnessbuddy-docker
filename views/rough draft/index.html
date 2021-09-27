@@ -18,7 +18,7 @@
   </head>
   <style media="screen">
   .carousel-cell {
-    width: 100%;
+    width: 35%;
     }
 
     /* cell number */
@@ -35,13 +35,24 @@
 
 
     <h1 class="w3-center">Stan this Workout Plan</h1>
-    <div class="carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03 }'>
+    <div class="carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03, "groupCells": true  }'>
       <div class="carousel-cell">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">Day 1</h5>
             <h6 class="card-subtitle mb-2 text-muted">Workout and Meal</h6>
             <p class="card-text">Lift all the weights in the gym</p>
+            <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Day 2</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Active Rest Day</h6>
+            <p class="card-text">Everybody wants to be a bodybuilder, but don't nobody want to lift no heavy ass weights</p>
             <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
           </div>
         </div>
