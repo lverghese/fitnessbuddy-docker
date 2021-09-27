@@ -1,16 +1,15 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Plan } = require('../models');
 
-//display possible workouts on homepage
+
 router.get('/', (req, res) => {
   Plan.findAll({
     attributes: [
-      'plan_name',
-      'user_id'
+      'plan_name'
     ],
     include: [
-      {
+      {//user_id
         model: ,
         attributes: [ ],
         include: {
@@ -30,6 +29,11 @@ router.get('/', (req, res) => {
       res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn
+      });
+    })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
       });
 });
 
