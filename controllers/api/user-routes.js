@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
       "password": "password1234"
     }
 */
-  Bulk.create({
+  User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password  
