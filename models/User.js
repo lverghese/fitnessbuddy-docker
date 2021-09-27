@@ -10,7 +10,6 @@ class User extends Model {
    }
 }
 
-
 User.init(
   {
     id: {
@@ -41,7 +40,6 @@ User.init(
   },
   {
     //hook fired when user is created to hash password for security
-    //using beforeCReate lifecycle
     hooks: {
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
