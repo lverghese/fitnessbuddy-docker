@@ -3,11 +3,7 @@ const sequelize = require('../config/connection');
 const { Bulk } = require('../models');
 const withAuth = require('../utils/auth');
 
-//how to determine which model to search from?
-//ask about a variable based route that gets from model designated by varuable
 
-
-// get all workouts for user's dashboard
 router.get('/', withAuth, (req, res) => {  
     console.log('======================');
     Plan.findAll({
