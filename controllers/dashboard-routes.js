@@ -15,31 +15,34 @@ possible solution:
                 - get exercises where req.body.session.'users plan_id' (not sure how to get this syntax yet)
                 - so 'localhost/dashboard' Exercise.findAll where req.body.id.session.user.plan_id
             Question (line 27): 
-               - how to get user obj attributes from session?
-                
- */
+               - how to get user obj attributes from session?        
+*/
 
-router.get('/', withAuth, (req, res) => {  
-    console.log('======================');
-    Exercise.findAll({
-      where: {
-        workout_plan_id: req.user.session
+
+router.get('/', withAuth, (req, res) => {
+  Plan.findOne({
+    where: {
+      user_id: req.session.user_id
+    },
+    attributes: [
+      'plan_name'
+    ],
+    include: [
+      {
+        model: Exercise,
+        attributes: [
+        'exercise_name',
+          'setLength',
+          'repLength',
+          'workout_plan_id',
+          'day_id'
+        ]
+      },
+      {
+        model: Day,
+        attributes: ['day_name']
       }
-       //get plan_id from user obj?
-
-    })
-      .then(dbBulkData => {
-        const posts = dbBulkData.map(goal => goal.get({ plain: true }));
-        //on login start session render user's dashboard once we get user's data (goals > plan )
-        res.render('dashboard', {
-          posts,
-          loggedIn: req.session.loggedIn
-        });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
+    ]
+  })
+})
 module.exports = router;
