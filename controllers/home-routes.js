@@ -25,11 +25,14 @@ router.get('/login', (req, res, err) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
-  } if(err){
-    console.log(err);
-  } else {
+  } 
+  // if(err){
+  //   console.log(err);
+  // } 
+  else 
+  //{
   res.render('login');
-  }
+  //}
 });
 
 // redirect to homepage is user is signed in
