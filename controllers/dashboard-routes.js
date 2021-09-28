@@ -3,29 +3,34 @@ const sequelize = require('../config/connection');
 const { Plan, User, Exercise, Day } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
-  Plan.findOne({
-    where: {
-      user_id: req.session.user_id
-    },
+//took out withAuth for testing
+router.get('/',  (req, res) => {
+  Plan.findAll({
+    //get the plan that matches the user id
+    //where: {
+      //user_id: req.session.user_id
+    //},
     attributes: [
       'plan_name'
     ],
+    //include the exercises for that plan
     include: [
       {
         model: Exercise,
-        attributes: [
-        'exercise_name',
+        attributes: 
+        [
+          'exercise_name',
           'setLength',
           'repLength',
           'workout_plan_id',
           'day_id'
         ]
-      },
-      {
-        model: Day,
-        attributes: ['day_name']
       }
+      // ,
+      // {
+      //   model: Day,
+      //   attributes: ['day_name']
+      // }
     ]
   })
   .then(dbExerciseData => res.json(dbExerciseData))
@@ -42,4 +47,9 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+router.delete('/:id')
+
 module.exports = router;
+
+
+

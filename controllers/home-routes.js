@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       //   plan,
       //   loggedIn: req.session.loggedIn
       // });
-   // })
+      // })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -26,9 +26,7 @@ router.get('/login', (req, res, err) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
-  } if(err){
-    console.log(err);
-  } else {
+  }  {
   res.render('login');
   }
 });
@@ -39,11 +37,16 @@ router.get('/signup', (req, res, err) => {
     res.redirect('/');
     return;
   }
-  if(err){
-    console.log(err);
-  } else {
+  // if(err){
+  //   console.log(err);
+  // } else {
     res.render('signup');
-  }  
+  //}  
 });
 
 module.exports = router;
+/**if(err){
+    console.log(err);
+  } else */
+
+  //redirect user to dah once signed up
