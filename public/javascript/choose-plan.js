@@ -70,4 +70,4 @@ async function planHandler (event) {
     }
 };
 
-document.querySelector('').addEventListener('click', planHandler);
+document.querySelector('#plan-pick-form').addEventListener('click', planHandler);
