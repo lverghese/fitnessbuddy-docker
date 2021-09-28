@@ -4,15 +4,22 @@
 
 <h1 class="w3-center">Stan this Workout Plan</h1>
 
-    <div class="carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03, "groupCells": true  }'>
-      {{#if workout_plan_id.1 }}
-        {{> day1 post}}
-      {{else if workout_plan_id.2 }}
-        {{> day2 post}}
-
-    
-
-  </div>
+    <div class="main-carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03}'>
+     <div>
+          {{> day1}}
+     </div>
+     <div>
+           {{> day2}}
+     </div>
+    <div>
+          {{> day3}}
+     </div>
+     <div>
+         {{> day4}}
+     </div>
+     <div>
+         {{> day5}}
+     </div>
 
 </section>
 
