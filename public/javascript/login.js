@@ -13,8 +13,7 @@ async function loginFormHandler(event) {
               password
           }),
           headers: {'Content-Type': 'application/json'}
-      });
-     
+      });    
       if (response.ok) {
           document.location.replace('/dashboard');
       } else {
@@ -22,6 +21,6 @@ async function loginFormHandler(event) {
           alert(result.message)
       }
   }
-}
+};
 
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
