@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fitness Buddy</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 
 <body>
@@ -25,7 +27,11 @@
   </nav>
   </header>
   <main>
+    <h1 class="w3-center">Stan this Workout Plan</h1>
+    <div class="carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03, "groupCells": true  }'>
     {{{ body }}}
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </main>
 
   {{#if loggedIn}}
