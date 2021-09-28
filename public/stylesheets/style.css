@@ -8,6 +8,17 @@
    font-size: large;
  }
 
+#btn-login {
+  background-color: red;
+  padding: 15px;
+  margin: 0px 15px ;
+}
+
+ .form-label{
+  color: blue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
 
   body, html {
     height: 100%;
@@ -40,9 +51,7 @@
     border-radius: 5px;
   }
   
-  button:hover {
-    background-color: #3486eb;
-  }
+ 
   
   
   textarea, input {
@@ -95,7 +104,7 @@
     padding: 2% 4%;
   }
   
-  .btn-no-style {
+  /* .btn-no-style {
     background: none;
     border: none;
     padding: 0;
@@ -106,12 +115,12 @@
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
-  }
+  } */
   
-  .btn-no-style:hover {
+  /* .btn-no-style:hover {
     background: none;
     color: #3486eb;
-  }
+  } */
   
   .edit-link {
     display: block;
