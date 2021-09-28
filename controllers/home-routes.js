@@ -23,12 +23,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res, err) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }  {
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }  {
+   console.log("logged in");
   res.render('login');
-  }
+  //}
 });
 
 // redirect to homepage is user is signed in

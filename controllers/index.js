@@ -6,7 +6,7 @@ const dashboardRoutes = require('./dashboard-routes');
 router.use('/api', apiRoutes);
 
 //use localhost:3001 as home route
-router.use('/', homeRoutes);
+router.use('/home', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use((req, res) => {
     res.status(404).end();
