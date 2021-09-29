@@ -10,9 +10,9 @@ router.get('/user/:id',  (req, res) => {
   // plans will have multiple exercises spanning across days
   User.findOne({
     attributes: { exclude: ['password'] },
-    // where: {
-    //   id: req.params.id
-    // },
+     where: {
+       id: req.params.id
+     },
     include: [
       { 
         model: Plan,
@@ -20,13 +20,17 @@ router.get('/user/:id',  (req, res) => {
         include: [
           {
             model: Exercise,
-            attributes: ['exercise_name']
-          },
+            attributes: ['exercise_name', 'day_id'],
+            include: [
+              {
+                model: Day,
+                attributes: ['day_name']
+              }
+            ]
+           
+          }
           //not too sure how to integrate day as of tn
-          {
-             model: Day,
-             attributes: ['day_name']
-           }
+         
         ]
       }
     ]
@@ -37,8 +41,8 @@ router.get('/user/:id',  (req, res) => {
       return;
     } 
     res.json(dbUserData);
-    //const post = dbUserData.get({ plain: true });
-    //res.render('dashboard')
+    const plan = dbUserData.map(plan => plan.get({ plain: true }));
+    res.render('dashboard', {plan, loggedIn: true });
     //, { 
       //post, 
       //loggedIn: true });}

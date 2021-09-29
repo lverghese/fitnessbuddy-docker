@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
         include: [
           {
             model: Exercise,
-            attributes: ['exercise_name']
+            attributes: ['exercise_name', 'day_id', 'repLength', 'setLength']
           }
         ]
       },
