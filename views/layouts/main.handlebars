@@ -23,16 +23,23 @@
 <body>
   <div class="wrapper">
   <header>
-  <h1>
+  {{!-- <h1 class="text-right" id="title">
     <a href="/">Fitness Buddy</a>
-  </h1>
+  </h1> --}}
+  </br>
+  
   <nav>
-    <span><a href="/">Home</a></span>
+    <span id="homepage-btn"><a href="/">Homepage</a></span>
+  
     {{#if loggedIn}}
     <a href="/dashboard">Dashboard</a>
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
+    </br>
+    </br>
+    <p id="login-btn">
     <a href="/login">Login</a>
+    </p>
     {{/if}}
   </nav>
   </header>
