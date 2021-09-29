@@ -39,8 +39,8 @@ router.get('/signup', (req, res, err) => {
     res.render('signup');
 });
 
-router.get('/plan-pick', (req, res) => {
-    res.render('plan-pick');
-});
+// router.get('/plan-pick', (req, res) => {
+//     res.render('plan-pick');
+// });
 
 module.exports = router;
