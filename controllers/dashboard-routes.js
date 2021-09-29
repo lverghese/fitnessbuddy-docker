@@ -4,6 +4,7 @@ const { Plan, User, Exercise, Day } = require('../models');
 const withAuth = require('../utils/auth');
 
 //took out withAuth for testing
+//user/:id
 router.get('/user/:id',  (req, res) => {
   // Dashboard should get one user's profile
   // user's profile should have one plan associated with it
@@ -12,6 +13,7 @@ router.get('/user/:id',  (req, res) => {
     attributes: { exclude: ['password'] },
      where: {
        id: req.params.id
+       //id: req.session.userId
      },
     include: [
       { 
@@ -27,10 +29,7 @@ router.get('/user/:id',  (req, res) => {
                 attributes: ['day_name']
               }
             ]
-           
           }
-          //not too sure how to integrate day as of tn
-         
         ]
       }
     ]
