@@ -10,24 +10,9 @@
               <p class="card-text">{{plan_name}}</p>
               <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
                <ol>
-              <li>Exercises Routine ~ Friday</li>
-              </br>
-                
-                <li>Exercise: Alternating Dumbell Curls</li>
-                  Amount of sets: 4</br>
-                  Amount of reps: 8</br>
-</br>
-              <li>Exercise: Rope Tricep Pushdowns</li>
-                  Amount of sets: 4</br>
-                  Amount of reps: 10</br>
-             </br> 
-              <li>Exercise: Cable Rope Hammer Curls</li>
-                  Amount of sets: 4</br>
-                  Amount of reps: 12</br>
-              </br>
-              <li>Exercise: Barbell Skull Crushers</li>
-                  Amount of sets: 4</br>
-                  Amount of reps: 10</br>
+              {{#each dayFive}}
+                <li> {{exercise_name}}</li>
+              {{/each}}              
             </ol>
             </div>
           </div>

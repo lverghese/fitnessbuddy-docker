@@ -10,16 +10,9 @@
             <p class="card-text">{{plan_name}}</p>
             <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
              <ol>
-              <li>Exercises Routine ~ Wednesday</li>
-                
-                <li>Exercise: Deadlifts</li>
-  
-              <li>Exercise: Close-grip cable rows</li>
-                 
-              <li>Exercise: Lat Pulldowns</li>
-                 
-              <li>Exercise: Bend-Over Barbell Rows</li>
-                  
+              {{#each dayThree}}
+                <li> {{exercise_name}}</li>
+              {{/each}}              
             </ol>
           </div>
         </div>
