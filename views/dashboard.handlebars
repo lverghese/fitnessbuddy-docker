@@ -11,11 +11,16 @@
 </section>
 
 <div class="main-carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03}'>
-     <ul>
-{{#each dayOne}}
-<li> {{exercise_name}}</li>
-{{/each}}
-</ul>
+     <div>
+        <ul>
+        {{> day1 }}
+        </ul>
+     </div>
+     <div>
+        <ul>
+        {{> day2 }}
+        </ul>
+     </div>
 </div>
 <!--ADD SCRIPT HERE
 <script src="/javascript/add-post.js"></script>

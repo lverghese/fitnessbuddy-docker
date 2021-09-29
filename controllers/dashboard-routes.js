@@ -36,8 +36,24 @@ router.get('/',  (req, res) => {
     const dayOne = exercises.filter(
       (exercise) => exercise.day_id === 1
     );
+    const dayTwo = exercises.filter(
+      (exercise) => exercise.day_id === 2
+    );
+    const dayThree = exercises.filter(
+      (exercise) => exercise.day_id === 3
+    );
+    const dayFour = exercises.filter(
+      (exercise) => exercise.day_id === 4
+    );
+    const dayFive = exercises.filter(
+      (exercise) => exercise.day_id === 5
+    );
     res.render('dashboard', {
       dayOne,
+      dayTwo,
+      dayThree,
+      dayFour,
+      dayFive,
       loggedIn: true,
     });
   })
