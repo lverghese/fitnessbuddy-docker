@@ -1,6 +1,3 @@
-const Plan  = require('../../models/Plan');
-const User  = require('../../models/User');
-/**https://www.baeldung.com/spring-mvc-model-objects-js */
 async function planHandler (event) {
     event.preventDefault();
 
@@ -10,26 +7,18 @@ async function planHandler (event) {
 
     //chose bulk
     if(bulkBtn){
-        const response = await fetch('/api/users', {
-            method: 'put',
-            //edit plan so that user_id = current user
-            //problem below: need access to Plan attributes and session (user attributes ie user.id)
-            //Plan.user_id = session.user.id;
+        //fetch plans from db and pu current user_id as user_id of Plan 
+        const response = await fetch('/api/plans', {
+            method: 'POST',
             body: JSON.stringify({
                 bulkBtn
             }),
             headers: {'Content-Type': 'application/json'}
-        });
-
-      if (response.ok) {
-        alert('Welcome to your Bulk Plan');
-        //send user to their dashboard
-        document.location.replace('/dashboard');
-    } else {
-        alert(response.statusText)
+        })
+        .then((response) => {console.log(response)})
     }
     }
-
+/*
     //chose cut
     if(cutBtn){
         const response = await fetch('/api/users', {
@@ -69,5 +58,5 @@ async function planHandler (event) {
 
     }
 };
-
+*/ 
 document.querySelector('').addEventListener('click', planHandler);

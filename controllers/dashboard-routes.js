@@ -5,11 +5,13 @@ const withAuth = require('../utils/auth');
 
 //took out withAuth for testing
 router.get('/',  (req, res) => {
+  //console.log(req);
+  //findOne where attributes user_id = req.session.user_id
   Plan.findAll({
     //get the plan that matches the user id
-    //where: {
-      //user_id: req.session.user_id
-    //},
+    where: {
+      user_id: req.session.user_id
+    },
     attributes: [
       'plan_name'
     ],
@@ -33,21 +35,17 @@ router.get('/',  (req, res) => {
       // }
     ]
   })
-  .then(dbExerciseData => res.json(dbExerciseData))
-    //const plan = dbPlanData.map(post => post.get({ plain: true }));
-
-    // res.render('homepage', {
-    //   plan,
-    //   loggedIn: req.session.loggedIn
-    // });
-  //})
+  .then(dbExerciseData => {
+    const plan = dbPlanData.map(post => post.get({ plain: true }));
+    res.render('dashboard', {
+      plan, loggedIn: req.session.loggedIn});
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.delete('/:id')
 
 module.exports = router;
 
