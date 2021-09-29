@@ -31,7 +31,7 @@ router.get('/',  (req, res) => {
       res.status(404).json({ message: 'No plan data for this user' });
       return;
     }
-    res.json(dbPlanData);
+    //res.json(dbPlanData);
     const plan = dbPlanData.map(plan => plan.get({ plain: true }));
     res.render('dashboard', {plan, loggedIn: true });
   })
