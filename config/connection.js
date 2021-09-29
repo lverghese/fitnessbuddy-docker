@@ -18,7 +18,11 @@ let sequelize;
  if (process.env.JAWSDB_URL) {
    sequelize = new Sequelize(process.env.JAWSDB_URL);
  } else {
+<<<<<<< HEAD
      sequelize = new Sequelize('fitness_buddy_db', 'root', 'USCaptain33', {
+=======
+     sequelize = new Sequelize('fitness_buddy_db', 'root', 'Raisin13.sql!', {
+>>>>>>> 75d87860c7fff0b796edc54bde8fb0e5ca23f237
      host: 'localhost',
      dialect: 'mysql',
      port: 3306
