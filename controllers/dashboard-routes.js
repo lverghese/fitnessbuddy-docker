@@ -46,25 +46,14 @@ router.get('/',  (req, res) => {
     res.status(500).json(err);
   });
 });
-
-module.exports = router;
-
-
-
-/**User.findOne({
+/*
+router.get('/',  (req, res) => {
+User.findOne({
     attributes: { exclude: ['password'] },
      where: {
        //id: req.session.user
-       id: req.session.id,
+       id: req.session.plan_id,
      },
-    include: [
-      { 
-        model: Plan,
-        attributes: ['id', 'plan_name'],
-        where: {
-          //id: User.plan_id 
-          id: req.session.plan_id
-      },
         include: [
           {
             model: Exercise,
@@ -77,8 +66,6 @@ module.exports = router;
             ]
           }
         ]
-      }
-    ]
   })
   .then(dbUserData => {
     if (!dbUserData) {
@@ -93,4 +80,7 @@ module.exports = router;
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
-  }); */
+  });
+  });  
+*/
+  module.exports = router;

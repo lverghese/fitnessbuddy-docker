@@ -5,6 +5,7 @@ async function signupFormHandler(event) {
   //reference the plan name from the button text to get the plan id to post to new user obj
   //const plan_id = 1;
   const plan_id = parseInt(event.target.id.split('-')[1]);
+  //const plan_id = event.target.id.split('-')[1];
   console.log(plan_id);
 
   if (username && password && plan_id) {

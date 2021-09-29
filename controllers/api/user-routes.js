@@ -98,10 +98,9 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.user_id = dbUserData.id;
+      req.session.plan_id = dbUserData.plan_id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-      console.log( 'ghghgdk');
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
@@ -164,8 +163,7 @@ router.post('/logout', (req, res, err) => {
   else {
     res.status(404).end();
   }
-
-})
+});
 
 
 module.exports = router;
