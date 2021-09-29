@@ -1,9 +1,9 @@
 async function planHandler (event) {
     event.preventDefault();
 
-    const bulkBtn = document.querySelector('').value.trim();
-    const cutBtn = document.querySelector('').value.trim();
-    const toneBtn = docuemnt.querySelector('').value.trim();
+    const bulkBtn = document.querySelector('pick-bulk').value.trim();
+    const cutBtn = document.querySelector('pick-cut').value.trim();
+    const toneBtn = docuemnt.querySelector('pick-tone').value.trim();
 
     //chose bulk
     if(bulkBtn){
@@ -15,9 +15,14 @@ async function planHandler (event) {
             }),
             headers: {'Content-Type': 'application/json'}
         })
-        .then((response) => {console.log(response)})
+        if (response.ok) {
+            document.location.replace('/dashboard');
+            } else {
+            alert(response.statusText);
+            }
+        //.then((response) => {console.log(response)})
     }
-    }
+};
 /*
     //chose cut
     if(cutBtn){
@@ -58,5 +63,5 @@ async function planHandler (event) {
 
     }
 };
-
+*/
 document.querySelector('#plan-pick-form').addEventListener('click', planHandler);
