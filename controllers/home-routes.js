@@ -48,6 +48,18 @@ router.get('/signup', (req, res, err) => {
   //}  
 });
 
+router.get('/choose-plan', (req, res, err) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // if(err){
+  //   console.log(err);
+  // } else {
+    res.render('choose-plan');
+  //}  
+});
+
 module.exports = router;
 /**if(err){
     console.log(err);

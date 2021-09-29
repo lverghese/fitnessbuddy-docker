@@ -9,7 +9,7 @@ router.get('/',  (req, res) => {
   // Dashboard should get one user's profile
   // user's profile should have one plan associated with it
   // plans will have multiple exercises spanning across days
-  
+
   res.render('dashboard')
   //console.log(req);
   //findOne where attributes user_id = req.session.user_id
