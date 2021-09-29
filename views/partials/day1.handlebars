@@ -10,7 +10,7 @@
             <p class="card-text">{{plan_name}}</p>
             <ol>
               {{#each exercises as | exercise |}}
-                {{#if day_id == "1"}}
+                {{#if day_id}}
                   <li>{{exercise_name}}</li>
                 {{/if}}
               {{/each}}                 

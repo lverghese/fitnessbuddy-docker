@@ -1,4 +1,6 @@
-
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 <section class = "row">
     <div class = "column">
 
@@ -9,23 +11,12 @@
 </section>
 
 <div class="main-carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03}'>
-     <div>
-          {{> day1}}
-     </div>
-     <div>
-           {{> day2}}
-     </div>
-    <div>
-          {{> day3}}
-     </div>
-     <div>
-         {{> day4}}
-     </div>
-     <div>
-         {{> day5}}
-     </div>
-
-
+     <ul>
+{{#each dayOne}}
+<li> {{exercise_name}}</li>
+{{/each}}
+</ul>
+</div>
 <!--ADD SCRIPT HERE
 <script src="/javascript/add-post.js"></script>
 -->

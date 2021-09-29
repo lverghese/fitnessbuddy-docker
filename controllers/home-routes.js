@@ -28,7 +28,10 @@ router.get('/login', (req, res, err) => {
   } 
   else 
 res.render('login');
-});
+if (err) {
+  console.log(err)
+}
+})
 
 // redirect to homepage is user is signed in
 router.get('/signup', (req, res, err) => {
@@ -37,7 +40,10 @@ router.get('/signup', (req, res, err) => {
     return;
   }
     res.render('signup');
-});
+    if (err) {
+      console.log(err)
+    }
+})
 
 // router.get('/plan-pick', (req, res) => {
 //     res.render('plan-pick');

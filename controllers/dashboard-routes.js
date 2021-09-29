@@ -26,14 +26,20 @@ router.get('/',  (req, res) => {
       }
     ]
   })
-  .then(dbPlanData => {
-    if(!dbPlanData){
+  .then((dbPlanData) => {
+    if (!dbPlanData) {
       res.status(404).json({ message: 'No plan data for this user' });
       return;
     }
-    res.json(dbPlanData);
-    const plan = dbPlanData.map(plan => plan.get({ plain: true }));
-    res.render('dashboard', {plan, loggedIn: true });
+    const { exercises } = dbPlanData.get({ plain: true });
+
+    const dayOne = exercises.filter(
+      (exercise) => exercise.day_id === 1
+    );
+    res.render('dashboard', {
+      dayOne,
+      loggedIn: true,
+    });
   })
   .catch(err => {
     console.log(err);
