@@ -3,43 +3,100 @@ const sequelize = require('../config/connection');
 const { Plan, User, Exercise, Day } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
+//took out withAuth for testing
+//user/:id
+router.get('/',  (req, res) => {
+  // Dashboard should get one user's profile
+  // user's profile should have one plan associated with it
+  // plans will have multiple exercises spanning across days
   Plan.findOne({
     where: {
-      user_id: req.session.user_id
+      id: req.session.plan_id
     },
-    attributes: [
-      'plan_name'
-    ],
     include: [
       {
         model: Exercise,
-        attributes: [
-        'exercise_name',
-          'setLength',
-          'repLength',
-          'workout_plan_id',
-          'day_id'
+        attributes: ['exercise_name', 'day_id'],
+        include: [
+          {
+            model: Day,
+            attributes: ['day_name']
+          }
         ]
-      },
-      {
-        model: Day,
-        attributes: ['day_name']
       }
     ]
   })
-  .then(dbExerciseData => res.json(dbExerciseData))
-    //const plan = dbPlanData.map(post => post.get({ plain: true }));
+  .then((dbPlanData) => {
+    if (!dbPlanData) {
+      res.status(404).json({ message: 'No plan data for this user' });
+      return;
+    }
+    const { exercises } = dbPlanData.get({ plain: true });
 
-    // res.render('homepage', {
-    //   plan,
-    //   loggedIn: req.session.loggedIn
-    // });
-  //})
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    const dayOne = exercises.filter(
+      (exercise) => exercise.day_id === 1
+    );
+    const dayTwo = exercises.filter(
+      (exercise) => exercise.day_id === 2
+    );
+    const dayThree = exercises.filter(
+      (exercise) => exercise.day_id === 3
+    );
+    const dayFour = exercises.filter(
+      (exercise) => exercise.day_id === 4
+    );
+    const dayFive = exercises.filter(
+      (exercise) => exercise.day_id === 5
+    );
+    res.render('dashboard', {
+      dayOne,
+      dayTwo,
+      dayThree,
+      dayFour,
+      dayFive,
+      loggedIn: true,
     });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
-
-module.exports = router;
+/*
+router.get('/',  (req, res) => {
+User.findOne({
+    attributes: { exclude: ['password'] },
+     where: {
+       //id: req.session.user
+       id: req.session.plan_id,
+     },
+        include: [
+          {
+            model: Exercise,
+            attributes: ['exercise_name', 'day_id'],
+            include: [
+              {
+                model: Day,
+                attributes: ['day_name']
+              }
+            ]
+          }
+        ]
+  })
+  .then(dbUserData => {
+    if (!dbUserData) {
+      //console.log(req.session.id);
+      res.status(404).json({ message: 'No plan data for this user' });
+      return;
+    } 
+    res.json(dbUserData);
+    //const plan = dbUserData.map(plan => plan.get({ plain: true }));
+    //res.render('dashboard', {plan, loggedIn: true });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+  });  
+*/
+  module.exports = router;

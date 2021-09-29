@@ -1,8 +1,15 @@
 const router = require('express').Router();
-const { Plan } = require('../../models');
+const { Plan, Exercise } = require('../../models');
 
 router.get('/', (req, res) => {
-    Plan.findAll({})
+    Plan.findAll({
+      include: [
+        {
+          model: Exercise,
+          attributes: ['id', 'exercise_name']
+        }
+      ]
+    })
       .then(dbPlanData => res.json(dbPlanData))
       .catch(err => {
         console.log(err);

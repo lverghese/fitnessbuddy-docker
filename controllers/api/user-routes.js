@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Plan, Exercise } = require('../../models');
 
 /*come back to post route... */
 //GET users
@@ -21,7 +21,19 @@ router.get('/:id', (req, res) => {
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
-    }
+    },
+    include: [
+      { 
+        model: Plan,
+        attributes: ['id', 'plan_name'],
+        include: [
+          {
+            model: Exercise,
+            attributes: ['exercise_name', 'day_id', 'repLength', 'setLength']
+          }
+        ]
+      },
+    ]
   })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -44,14 +56,16 @@ router.post('/', (req, res) => {
       "password": "password1234"
     }
 */
-  User.create({
+User.create({
     username: req.body.username,
-    password: req.body.password  
+    password: req.body.password,
+    plan_id: req.body.plan_id  
   })
     .then(dbUserData => {
       req.session.save(() => {
-        req.session.user_id = dbUserData.id;
+        req.session.id = dbUserData.id;
         req.session.username = dbUserData.username;
+        req.session.plan_id = dbUserData.plan_id;
         req.session.loggedIn = true;
     
         res.json(dbUserData);
@@ -84,7 +98,7 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       // declare session variables
-      req.session.user_id = dbUserData.id;
+      req.session.plan_id = dbUserData.plan_id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
@@ -149,7 +163,6 @@ router.post('/logout', (req, res, err) => {
   else {
     res.status(404).end();
   }
-
 });
 
 

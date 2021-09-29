@@ -1,42 +1,42 @@
-
-<!--From tech blog dash-->
+<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 <section class = "row">
     <div class = "column">
-        <H2>Create new post</H2>
-        <form class = "new-post-form">
-            <div>
-                <label for="post-title">Title</label>
-                <input type="text" id="post-title" name="post-title"/>
-            </div>
-            <div>
-                <label for="post-text">Text</label>
-                <textarea id="post-text" name="post-text"></textarea>
-            </div>
-            <button type="submit" class ="btn">Create</button>
-        </form>
-    </div>
-    </div>
-  <div class = "column">
-    <h2>About Me</h2>
-    {{> user-info}}
-  </div>
+
+<h1 class="w3-center">Stan this Workout Plan</h1>
+
+    
 
 </section>
 
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
-
+<div class="main-carousel" data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03}'>
+     <div>
+        <ul>
+        {{> day1 }}
+        </ul>
+     </div>
+     <div>
+        <ul>
+        {{> day2 }}
+        </ul>
+     </div>
+     <div>
+        <ul>
+        {{> day3 }}
+        </ul>
+     </div>
+     <div>
+        <ul>
+        {{> day4 }}
+        </ul>
+     </div>
+     <div>
+        <ul>
+        {{> day5 }}
+        </ul>
+     </div>
+</div>
 <!--ADD SCRIPT HERE
 <script src="/javascript/add-post.js"></script>
 -->

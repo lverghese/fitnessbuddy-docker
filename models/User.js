@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcryptjs = require('bcryptjs');
+const { Plan } = require('.');
 
 class User extends Model {
  
@@ -28,8 +29,16 @@ User.init(
       validate: {
         len: [4]
       }
-    }
-  },
+    },
+     plan_id: {
+       type: DataTypes.INTEGER,
+       allowNull: false,
+       references: {
+         model: 'plan',
+         key: 'id'
+       }
+     }
+},
   {
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality

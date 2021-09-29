@@ -1,18 +1,36 @@
     <div class="card">
       <h3 class="card-header">Sign Up</h3>
       <form id="signup-form" class="card-body">
-        <label for="username-signup" class="form-label">Username</label>
+        <label for="username-signup" class="form-label">Username:</label>
         <input id="username-signup" type="text" class="form-input" />
 
 
-        <label class="form-label" for="password-signup">Password</label>
+        <label class="form-label" for="password-signup">Password:</label>
         <input  id="password-signup" type="password" class="form-input" />
 
         <button type="submit" class="btn">Signup!</button>
-        <a class="login-link" href="/login">Log in instead</a>
+        <a class="login-link" href="/login">Already have an account, login instead!</a>
+        </form>
+    </div>
+
+         
+         
+         <div class="card"></div>
+      <h3 class="card-header">Pick Your Plan</h3>
+    <form id="plan-pick-form" class="card-body"> 
+      <!--caroline's edit: changes id from "pick-bulk" to "bulk" etc-->
+      <button type="submit" id="bulk-1" class="btn"> Bulk Workout </button>
+      <button type="submit" id="cut-2" class="btn"> Cut Workout </button>
+      <button type="submit" id="tone-3" class="btn"> Tone Workout </button>
+        
+        <a class="dashboard" href="/">Would you like to return to the dashboard?</a>
       </form>
     </div>
 
-<!--ADD SCRIPT HERE
-<script src="/javascript/signup.js"></script>
+
+      
+<!--
+  i think this script is trash now but commenting it out jic
+<script src="/javascript/choose-plan.js"></script>
 -->
+<script src="/javascript/signup.js"></script>

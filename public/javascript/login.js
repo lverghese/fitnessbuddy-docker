@@ -3,6 +3,7 @@ async function loginFormHandler(event) {
   // get login info from form  check
   const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
+ 
 
   if (username && password) {
       // POST to the login route with the user information
@@ -13,15 +14,15 @@ async function loginFormHandler(event) {
               password
           }),
           headers: {'Content-Type': 'application/json'}
-      });
-     
+      });    
       if (response.ok) {
+          //redirect to dash with uersid
           document.location.replace('/dashboard');
       } else {
           let result = await response.json()
           alert(result.message)
       }
   }
-}
+};
 
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
