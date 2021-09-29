@@ -53,10 +53,26 @@
     border-radius: 5px;
   }
 
+  #one, #two, #three, #four, #five {
+    background-color: skyblue;
+    color: blue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+  }
   
-  
+
+  li {
+    color: blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 5px;
+  }
  
-  
+  h5 {
+    color: red;
+    font-style: initial;
+    text-shadow: white;
+    text-shadow: 0 0 10px rgba(235, 190, 190, 0.5);
+  }
   
   textarea, input {
     padding: .5%;

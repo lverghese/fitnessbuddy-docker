@@ -4,16 +4,16 @@
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 <div class="carousel-cell">
         <div class="card  bg-light mb-3" style="width: 18rem;">
-          <div class="card-header">Monday</div>
+          <div class="text-center card-header" id="one">Monday</div>
           <div class="card-body">
-            <h5 class="card-title">Workout of the Day</h5>
-            <p class="card-text">{{plan_name}}</p>
+            <h5 class="text-center card-title">Workout of the Day</h5>
+            <p class="text-center card-text">{{plan_name}}</p>
             <ol>
               {{#each dayOne}}
                 <li> {{exercise_name}}</li>
               {{/each}}              
             </ol>
-            <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+        
           </div>
         </div>
 </div>
