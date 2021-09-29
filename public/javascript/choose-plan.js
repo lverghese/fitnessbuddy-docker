@@ -44,4 +44,7 @@ async function planHandler (event) {
     }
 };
 
-document.querySelector('#plan-pick-form').addEventListener('click', planHandler);
+
+document.querySelector('pick-bulk').addEventListener('click', planHandler);
+document.querySelector('pick-cut').addEventListener('click', planHandler);
+docuemnt.querySelector('pick-tone').addEventListener('click', planHandler);

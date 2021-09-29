@@ -26,13 +26,8 @@ router.get('/login', (req, res, err) => {
     res.redirect('/');
     return;
   } 
-  // if(err){
-  //   console.log(err);
-  // } 
   else 
-  //{
-  res.render('login');
-  //}
+res.render('login');
 });
 
 // redirect to homepage is user is signed in
@@ -41,28 +36,11 @@ router.get('/signup', (req, res, err) => {
     res.redirect('/');
     return;
   }
-  // if(err){
-  //   console.log(err);
-  // } else {
     res.render('signup');
-  //}  
 });
 
-router.get('/choose-plan', (req, res, err) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  // if(err){
-  //   console.log(err);
-  // } else {
-    res.render('choose-plan');
-  //}  
+router.get('/plan-pick', (req, res) => {
+    res.render('plan-pick');
 });
 
 module.exports = router;
-/**if(err){
-    console.log(err);
-  } else */
-
-  //redirect user to dah once signed up

@@ -16,7 +16,7 @@ async function signupFormHandler(event) {
 
       if (response.ok) {
           alert('Account created! Logging you in now.');
-          document.location.replace('/dashboard');
+          document.location.replace('/plan-pick');
       } else {
           alert(response.statusText)
       }
