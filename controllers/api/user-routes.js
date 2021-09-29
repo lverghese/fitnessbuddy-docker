@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Plan, Exercise } = require('../../models');
 
 /*come back to post route... */
 //GET users
@@ -21,7 +21,19 @@ router.get('/:id', (req, res) => {
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
-    }
+    },
+    include: [
+      { 
+        model: Plan,
+        attributes: ['id', 'plan_name'],
+        include: [
+          {
+            model: Exercise,
+            attributes: ['exercise_name']
+          }
+        ]
+      },
+    ]
   })
     .then(dbUserData => {
       if (!dbUserData) {

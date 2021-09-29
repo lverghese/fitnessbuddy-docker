@@ -5,46 +5,52 @@ const withAuth = require('../utils/auth');
 
 //took out withAuth for testing
 router.get('/',  (req, res) => {
+
+  // Dashboard should get one user's profile
+  // user's profile should have one plan associated with it
+  // plans will have multiple exercises spanning across days
+  
+  res.render('dashboard')
   //console.log(req);
   //findOne where attributes user_id = req.session.user_id
-  Plan.findAll({
-    //get the plan that matches the user id
-    where: {
-      user_id: req.session.user_id
-    },
-    attributes: [
-      'plan_name'
-    ],
-    //include the exercises for that plan
-    include: [
-      {
-        model: Exercise,
-        attributes: 
-        [
-          'exercise_name',
-          'setLength',
-          'repLength',
-          'workout_plan_id',
-          'day_id'
-        ]
-      }
-      // ,
-      // {
-      //   model: Day,
-      //   attributes: ['day_name']
-      // }
-    ]
+  // Plan.findAll({
+  //   //get the plan that matches the user id
+  //   where: {
+  //     user_id: req.session.user_id
+  //   },
+  //   attributes: [
+  //     'plan_name'
+  //   ],
+  //   //include the exercises for that plan
+  //   include: [
+  //     {
+  //       model: Exercise,
+  //       attributes: 
+  //       [
+  //         'exercise_name',
+  //         'setLength',
+  //         'repLength',
+  //         'workout_plan_id',
+  //         'day_id'
+  //       ]
+  //     }
+  //     // ,
+  //     // {
+  //     //   model: Day,
+  //     //   attributes: ['day_name']
+  //     // }
+  //   ]
   })
-  .then(dbExerciseData => {
-    const plan = dbPlanData.map(post => post.get({ plain: true }));
-    res.render('dashboard', {
-      plan, loggedIn: req.session.loggedIn});
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+  // .then(dbExerciseData => {
+  //   //const plan = dbPlanData.map(post => post.get({ plain: true }));
+  //   res.render('dashboard', {
+  //     plan, loggedIn: req.session.loggedIn});
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //     res.status(500).json(err);
+  //   });
+//});
 
 
 module.exports = router;

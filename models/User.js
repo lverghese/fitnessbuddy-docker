@@ -29,7 +29,14 @@ User.init(
       validate: {
         len: [4]
       }
-    }
+    },
+     plan_id: {
+       type: DataTypes.INTEGER,
+       references: {
+         model: 'plan',
+         key: 'id'
+       }
+     }
 },
   {
     hooks: {
