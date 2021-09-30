@@ -68,8 +68,10 @@
   #one, #two, #three, #four, #five {
     background-color: skyblue;
     color: blue;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    text-shadow: 0 0 10px rgba(194, 78, 78, 0.5);
+   
   }
   
 
@@ -140,11 +142,31 @@
     
   }
 
-  #homepage-btn {
-    color: crimson;
+   #homepage-btn {
+    
     align-content: flex;
-    font-size: large;
-  }
+    font-size: 25px;
+    padding: 5px;
+    background-color: red;
+    
+  } 
+    #logout {
+      color: royalblue;
+      font-size: 25px;
+      padding: 5px;
+      margin: 5px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    #dashboard {
+      color: royalblue;
+      font-size: 25px;
+      padding: 5px;
+      margin: 5px;
+      font-weight: bold;
+      background-color: red;
+    }
 
   #title {
     font-size: 1em;
@@ -183,4 +205,9 @@
     justify-content: center;
     padding: 1%;
     font-size: 110%;
+    color: red;
+  }
+
+  nav {
+    color: red;
   }
