@@ -5,7 +5,7 @@
   }
 
  p {
-   color: rgb(12, 12, 87);
+   color: rgb(44, 44, 46);
   
    font-size: large;
  }
@@ -34,8 +34,12 @@
   color: white;
 }
 
+.login-link{
+  color: #5C527F;
+}
+
  .form-label{
-  color: blue;
+  color:  #5C527F;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
 
@@ -202,7 +206,7 @@
   }
   
  #login-title {
-   background-color: skyblue;
+   background-color:  #5C527F;
    border: 2px, black;
    color: rgba(49, 40, 44, 0.979);
  }
