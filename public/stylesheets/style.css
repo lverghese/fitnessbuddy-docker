@@ -114,7 +114,7 @@
     display: block;
   }
   
-  .wrapper {
+/* .wrapper {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
@@ -122,14 +122,13 @@
     display: flex;
     flex-direction: column;
   }
+*/
   
   header {
-    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    border-bottom: 4px solid #6E85B2;
   }
   
   h1 {
@@ -179,7 +178,6 @@
   
   main {
     flex: 1;
-    padding: 2% 4%;
   }
   
  #login-title {
@@ -218,5 +216,6 @@
   }
 
 .home {
+
   background-color: #5C527F;
 }
