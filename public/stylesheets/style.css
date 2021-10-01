@@ -128,7 +128,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1%;
+    padding: 0;
+    border-bottom: 4px solid #6E85B2;
   }
   
   h1 {
@@ -213,3 +214,7 @@
   nav {
     color: red;
   }
+
+.home {
+  background-color: #5C527F;
+}
