@@ -212,13 +212,14 @@
  }
 
  #signup-title{
-   background-color: skyblue;
+   background-color:  #5C527F;
    border: 2px, black;
-   color:red;
+   color:white;
  }
 
  #pick-plan-id {
-   color: red;
+   background-color:  #5C527F;
+   color: white;
  }
   
   .edit-link {
