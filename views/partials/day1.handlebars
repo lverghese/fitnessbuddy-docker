@@ -9,10 +9,11 @@
             <h5 class="text-center card-title">Workout of the Day</h5>
             <p class="text-center card-text">{{plan_name}}</p>
             <ol>
+                
               {{#each dayOne}}
                 <li> {{exercise_name}}</li>
-                  <p>{{setLength}}</p>
-                  <p>{{repLength}}</p>
+                <p>{{setLength}} sets of </p>
+                <p>{{repLength}} reps</p>
               {{/each}}              
             </ol>
         
