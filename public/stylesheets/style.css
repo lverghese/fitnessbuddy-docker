@@ -184,15 +184,15 @@
     border-radius: 10px;
     }
 
-    /*#dashboard {
-      color: royalblue;
-      font-size: 25px;
+    #dash {
+      color: #5C527F;
+      font-size: 20px;
       padding: 5px;
       margin: 5px;
       font-weight: bold;
-      background-color: red;
+     
     }
-*/
+
   #title {
     font-size: 1em;
   }
@@ -225,6 +225,11 @@
   .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
+  }
+
+  #bulk-1, #cut-2, #tone-3{
+    background-color: rgb(88, 85, 85);
+    color: white;
   }
   
   
