@@ -148,10 +148,12 @@
    #homepage-btn {
     
     align-content: flex;
-    font-size: 25px;
-    padding: 5px;
     background-color: #6E85B2;
-    
+    color: #5C527F; 
+    padding: 12px 16px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 10px;
   } 
     #logout {
       color: royalblue;
