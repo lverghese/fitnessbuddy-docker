@@ -155,6 +155,7 @@
     color: rgb(240, 229, 231);
     /* padding: 5px; */
     padding: 5px;
+     width: 100px;
     
   }
 .flickity-viewport{
@@ -250,3 +251,81 @@
 
   background-color: #5C527F;
 }
+
+/*alt login page.....
+*/
+
+body{
+  background-image: url('https://getwallpapers.com/wallpaper/full/8/2/c/200229.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+  align-content: center;
+  }
+
+  .card{
+    height: 370px;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
+    
+
+    .social_icon span{
+    font-size: 50px;
+    margin-left: 10px;
+    color: #5C527F;
+    position: relative; 
+    top: 43px;
+    }
+    
+    .social_icon span:hover{
+    color: #3486eb;
+    cursor: pointer;
+    }
+    
+    .card-header h3{
+    color: white;
+    }
+    
+    .social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+    }
+    
+    .input-group-prepend span{
+    width: 50px;
+    background-color: #5C527F;
+    color: black;
+    border:0;
+    }
+    
+
+    
+    .remember{
+    color: white;
+    }
+    
+    .remember input
+    {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+    }
+    
+    .login_btn{
+    width: 100px;
+    }
+    
+    .links{
+    color: white;
+    }
+    
+    .links a{
+    margin-left: 4px;
+    }
