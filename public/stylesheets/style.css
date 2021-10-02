@@ -128,15 +128,16 @@
     display: block;
   }
   
-/* .wrapper {
+  /*.wrapper {
     width: 100%;
     min-height: 100%;
-    max-width: 1200px;
+    max-width: 12000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
   }
-*/
+  */
+
   
   header {
     display: flex;
@@ -248,7 +249,7 @@
   }
 
 .home {
-
+ opacity: .8 !important;
   background-color: #5C527F;
 }
 
@@ -329,3 +330,6 @@ body{
     .links a{
     margin-left: 4px;
     }
+
+    /*sign up page*/
+
