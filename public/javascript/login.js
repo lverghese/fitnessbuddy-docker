@@ -18,6 +18,7 @@ async function loginFormHandler(event) {
       if (response.ok) {
           //redirect to dash with uersid
           document.location.replace('/dashboard');
+ 
       } else {
           let result = await response.json()
           alert(result.message)

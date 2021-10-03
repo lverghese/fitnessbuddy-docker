@@ -1,21 +1,54 @@
-/*FROM MODULE 14.1.3*/
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
+    /*background-color: rgb(2, 2, 2);
+    */
   }
-  
+
+  body{
+    background-image: url('https://getwallpapers.com/wallpaper/full/8/2/c/200229.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    align-content: center;
+    }
+
  p {
-   color: red;
+   color: rgb(44, 44, 46);
+  
    font-size: large;
  }
+ .lead{
+   color: white;
+   font-style: oblique;
+ }
+
+#newAcctModal{
+  display: none; /* Hidden by default */
+  position:static; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 10;
+  width: 50%; /* Full width */
+  height: 100%; /* Full height */
+  
+  background-color: rgb(104, 195, 236); /* Fallback color */
+  background-color: rgba(30, 25, 99, 0.4); /* Black w/ opacity */
+}
 
 #btn-login {
-  background-color: red;
-  padding: 15px;
-  margin: 0px 15px ;
+  background-color: rgb(59, 43, 43);
+  padding: 8px;
+  margin: 2px 15px 7px;
+  color: white;
+}
+
+.login-link{
+  color: #5C527F;
 }
 
  .form-label{
-  color: blue;
+  color:  #5C527F;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
 
@@ -30,29 +63,55 @@
   
   a {
     text-decoration: none;
-    color: #225ca3;
+    color: rgb(247, 241, 241);
     font-weight: bold;
-    transition: color .1s;
+    transition: color .3s;
+    
   }
   
   a:hover {
     color: #3486eb;
   }
+
+  #ex-title {
+    padding: 30px
+  }
   
   
   button {
-    background-color: blue;
+    background-color: #5e6c88;
     border: 0;
-    padding: 1%;
-    color: white;
+    padding: 5px;
+    color: rgb(243, 243, 243);
     font-weight: bold;
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
   }
+
+  #one, #two, #three, #four, #five {
+    background-color:  #5C527F;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    text-shadow: 0 0 10px rgba(194, 78, 78, 0.5);
+   
+  }
   
+
+  li, p {
+    color: rgb(128, 123, 123);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 5px;
+    font-weight: 800;
+  }
  
-  
+  h5 {
+    color: #5C527F;
+    font-style: initial;
+    text-shadow: white;
+    text-shadow: 0 0 10px rgba(235, 190, 190, 0.5);
+  }
   
   textarea, input {
     padding: .5%;
@@ -78,53 +137,95 @@
     display: block;
   }
   
-  .wrapper {
+  /*.wrapper {
     width: 100%;
     min-height: 100%;
-    max-width: 1200px;
+    max-width: 12000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
   }
-  
-  header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
+  */
+
+  h1 {
+    font-size: 20px;
+    color: rgb(226, 226, 226);
+
   }
-  
-  header h1 {
+
+
+.flickity-viewport{
+  color: lightgray;
+}
+
+  #login-form{
+    background-color: lightgray;
+  }
+
+    #logout {
+      background-color: #5e6c88;
+    color: #ffffff;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    }
+
+    #dash {
+      color: #5C527F;
+      font-size: 20px;
+      padding: 5px;
+      margin: 5px;
+      font-weight: bold;
+     
+    }
+
+  #title {
     font-size: 1em;
   }
   
+  .text-light {
+    margin: 5px;
+  }
+
   main {
     flex: 1;
-    padding: 2% 4%;
   }
   
-  /* .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: #225ca3;
-    font-size: 100%;
-    font-weight: bold;
-    transition: color .1s;
-    margin-left: 16px;
-  } */
-  
-  /* .btn-no-style:hover {
-    background: none;
-    color: #3486eb;
-  } */
+ #login-title {
+   background-color:  #5C527F;
+   border: 2px, black;
+   color: rgba(49, 40, 44, 0.979);
+ }
+
+ #signup-title{
+   background-color:  #5C527F;
+   border: 2px, black;
+   color:white;
+ }
+
+.card{
+margin: auto;
+}
+
+ 
+ #signup-form{
+   margin: auto;
+ }
+
+ #pick-plan-id {
+   background-color:  #5C527F;
+   color: white;
+ }
   
   .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
+  }
+
+  #bulk-1, #cut-2, #tone-3{
+    background-color: rgb(88, 85, 85);
+    color: white;
   }
   
   
@@ -134,4 +235,88 @@
     justify-content: center;
     padding: 1%;
     font-size: 110%;
+    color: rgb(65, 62, 62);
   }
+
+
+.home {
+ opacity: .8 !important;
+  background-color: #5C527F;
+}
+
+/*alt login page.....
+*/
+
+  .card{
+    height: 370px;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
+    
+
+    .social_icon span{
+    font-size: 50px;
+    margin-left: 10px;
+    color: #5C527F;
+    position: relative; 
+    top: 43px;
+    }
+    
+    .social_icon span:hover{
+    color: #3486eb;
+    cursor: pointer;
+    }
+    
+    .card-header h3{
+    color: white;
+    }
+    
+    .social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+    }
+    
+    .input-group-prepend span{
+    width: 50px;
+    background-color: #5C527F;
+    color: black;
+    border:0;
+    }
+    
+
+    
+    .remember{
+    color: white;
+    }
+    
+    .remember input
+    {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+    }
+    
+    .login_btn{
+    width: 100px;
+    }
+    
+    .links{
+    color: white;
+    }
+    
+    .links a{
+    margin-left: 4px;
+    }
+
+    /*nav*/
+
+    .jumbotron {
+      background-image: url("https://getwallpapers.com/wallpaper/full/b/f/1/247499.jpg");
+      background-size: cover;
+    }
+

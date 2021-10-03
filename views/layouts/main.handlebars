@@ -23,18 +23,31 @@
 <body>
   <div class="wrapper">
   <header>
-  <h1>
+    <header class="jumbotron bg-dark text-white bg-gradient mb-0">
+      <navclass="navbar">
+        <span class="navbar-text">
+            <span id="homepage-btn"><i class="fa fa-home"></i><a href="/"> Homepage</a></span>
+  
+               {{#if loggedIn}}
+              <a id="dashboard" href="/dashboard">Dashboard</a>
+              <button id="logout" class="btn-no-style">Logout</button>
+              {{else}}
+              </br>
+              </br>
+              <p id="login-btn">
+              <a href="/login">Login</a>
+              </p>
+              {{/if}}
+      </span>
+    </nav>
+      <h1 class="display-3">Fitness Buddy</h1>
+      <p class="lead">Swole is the goal, size is the prize!</p>
+  {{!-- <h1 class="text-right" id="title">
     <a href="/">Fitness Buddy</a>
-  </h1>
-  <nav>
-    <span><a href="/">Home</a></span>
-    {{#if loggedIn}}
-    <a href="/dashboard">Dashboard</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
+  </h1> --}}
+  </br>
+  
+
   </header>
   <main>
     {{{ body }}}
@@ -50,7 +63,7 @@
 
 
 <footer>
-  Thank you for using the fitness buddy app!
+  <h4 class="text-center p-3 mb-2 bg-secondary text-white">Thank you for using the fitness buddy app!</h4>
 </footer>
 
 </div>

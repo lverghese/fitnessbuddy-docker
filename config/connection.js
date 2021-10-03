@@ -1,6 +1,9 @@
 // import the Sequelize constructor from the library
 const Sequelize = require('sequelize');
+
 require('dotenv').config();
+
+let sequelize;
 
 // if (process.env.JAWSDB_URL) {
 //   sequelize = new Sequelize(process.env.JAWSDB_URL);
@@ -13,16 +16,15 @@ require('dotenv').config();
 // };
 
 ///hardcode .env for npm run seedsd to work
-let sequelize;
 
- if (process.env.JAWSDB_URL) {
-   sequelize = new Sequelize(process.env.JAWSDB_URL);
- } else {
-     sequelize = new Sequelize('fitness_buddy_db', 'root', 'Cena2022!', {
-     host: 'localhost',
-     dialect: 'mysql',
-     port: 3306
-   });
- };
+  if (process.env.JAWSDB_URL) {
+    sequelize = new Sequelize(process.env.JAWSDB_URL);
+  } else {
+      sequelize = new Sequelize('fitness_buddy_db', 'root', 'dinosaur2', {
+      host: 'localhost',
+      dialect: 'mysql',
+      port: 3306
+    });
+  };
 
 module.exports = sequelize;

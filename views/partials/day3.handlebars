@@ -4,22 +4,16 @@
   
       <div class="carousel-cell">
         <div class="card  bg-light mb-3" style="width: 18rem;">
-          <div class="card-header">Day 3</div>
+          <div class="text-center card-header" id="three">Wednesday</div>
           <div class="card-body">
-            <h5 class="card-title">Workout of the Day</h5>
-            <p class="card-text">{{plan_name}}</p>
-            <a href="#" class="card-link">Click this link to eat soap instead of lifting</a>
+            <h5 class="text-center card-title">Workout of the Day</h5>
+            <p class="text-center card-text">{{plan_name}}</p>
+           
              <ol>
-              <li>Exercises Routine ~ Wednesday</li>
-                
-                <li>Exercise: Deadlifts</li>
-  
-              <li>Exercise: Close-grip cable rows</li>
-                 
-              <li>Exercise: Lat Pulldowns</li>
-                 
-              <li>Exercise: Bend-Over Barbell Rows</li>
-                  
+              {{#each dayThree}}
+                <li> {{exercise_name}}</li>
+              <p>{{setLength}} x {{repLength}} reps</p>
+              {{/each}}              
             </ol>
           </div>
         </div>
