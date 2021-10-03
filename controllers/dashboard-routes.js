@@ -16,7 +16,13 @@ router.get('/',  (req, res) => {
     include: [
       {
         model: Exercise,
-        attributes: ['exercise_name', 'day_id'],
+        attributes: [
+        'exercise_name', 
+        'day_id'
+         , 
+         'setLength', 
+         'repLength'
+      ],
         include: [
           {
             model: Day,
@@ -31,6 +37,9 @@ router.get('/',  (req, res) => {
       res.status(404).json({ message: 'No plan data for this user' });
       return;
     }
+    // const plan = dbPlanData.map(post => post.get({ plain: true }));
+    // console.log(setLength);
+    // console.log(repLength);
     const { exercises } = dbPlanData.get({ plain: true });
 
     const dayOne = exercises.filter(
@@ -62,41 +71,4 @@ router.get('/',  (req, res) => {
     res.status(500).json(err);
   });
 });
-/*
-router.get('/',  (req, res) => {
-User.findOne({
-    attributes: { exclude: ['password'] },
-     where: {
-       //id: req.session.user
-       id: req.session.plan_id,
-     },
-        include: [
-          {
-            model: Exercise,
-            attributes: ['exercise_name', 'day_id'],
-            include: [
-              {
-                model: Day,
-                attributes: ['day_name']
-              }
-            ]
-          }
-        ]
-  })
-  .then(dbUserData => {
-    if (!dbUserData) {
-      //console.log(req.session.id);
-      res.status(404).json({ message: 'No plan data for this user' });
-      return;
-    } 
-    res.json(dbUserData);
-    //const plan = dbUserData.map(plan => plan.get({ plain: true }));
-    //res.render('dashboard', {plan, loggedIn: true });
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-  });  
-*/
   module.exports = router;

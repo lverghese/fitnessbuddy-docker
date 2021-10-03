@@ -6,10 +6,10 @@ async function logout() {
 
   if (response.ok) {
     document.location.replace('/');
-    console.log('clicked');
+    //console.log('clicked');
   } else {
     alert(response.statusText);
-    console.log('wrong');
+    //console.log('wrong');
   }
 }
 

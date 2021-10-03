@@ -21,7 +21,7 @@ Exercise.belongsTo(Plan, {
 })
 
 Day.hasMany(Exercise, {
-    foreignKey: "day_id"
+    foreignKey: 'day_id'
 })
 
 Exercise.belongsTo(Day, {

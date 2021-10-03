@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
     Exercise.create({
       exercise_name: req.body.exercise_name,
       setLength: req.body.setLength,
-      repLength: req.body.repolength,
+      repLength: req.body.repLength,
       workout_plan_id: req.body.workout_plan_id,
       day_id: req.body.day_id
     })

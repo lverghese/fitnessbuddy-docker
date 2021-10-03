@@ -1,12 +1,17 @@
+// function displayModal(){
+//     const newAcctModal = document.querySelector("#newAcctModal");
+//     newAcctModal.style.display = "block";
+// }
+
+
 async function signupFormHandler(event) {
   event.preventDefault();
   const username = document.querySelector('#username-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+
   //reference the plan name from the button text to get the plan id to post to new user obj
-  //const plan_id = 1;
   const plan_id = parseInt(event.target.id.split('-')[1]);
-  //const plan_id = event.target.id.split('-')[1];
-  console.log(plan_id);
+  //console.log(plan_id);
 
   if (username && password && plan_id) {
       // POST new user
@@ -20,9 +25,14 @@ async function signupFormHandler(event) {
           headers: {'Content-Type': 'application/json'}
       });
       if (response.ok) {
-          alert('Account created! Logging you in now.');
+          //alert('Account created! Logging you in now.');
+            //displayModal();
+            newAcctModal.style.display = "block";
+            let displayModal = setTimeout(() => {
+                document.location.replace('dashboard');
+                }, 2000)
           //redirect to dash with current userid
-          document.location.replace('dashboard');
+          
       } else {
           alert(response.statusText)
       }

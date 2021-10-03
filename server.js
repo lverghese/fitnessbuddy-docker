@@ -16,7 +16,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // init sessions
 const sess = {
-    secret: 'super super secret',
+    secret: 'secret secret server',
     //process.env.SESSION_SECRET
     cookie: {},
     resave: false,
@@ -42,4 +42,4 @@ const sess = {
 // force: false to maintain data - aka normal operation
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
-})
+});
