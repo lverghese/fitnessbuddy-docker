@@ -3,6 +3,9 @@
   <br />
   ## Description
   :mag: A fitness application that allows users to create an account that comes with a fitness plan based on their goals. The user has a weekly calendar full of workouts specific to the type of fitness they aim to achieve.
+![Get Started](./views/image-1)
+![Get Started](./views/image-2)
+
   ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
