@@ -228,6 +228,15 @@
    color:white;
  }
 
+.card{
+margin: auto;
+}
+
+ 
+ #signup-form{
+   margin: auto;
+ }
+
  #pick-plan-id {
    background-color:  #5C527F;
    color: white;
